@@ -10,25 +10,30 @@
 
 <body>
     <header>
-        <h1>Simon Says</h1>
+        <h1>Simon <i class="red">S</i><i class="green">a</i><i class="blue">y</i><i class="yellow">s</i>!</h1>
     </header>
+    <div id="description">
+        Tu was Simon sagt! In jeder Runde wird dir ein Muster aus Farben vorgespielt. Klicke anschließend die farbigen Segement in der richtigen Reihenfolge an. Wenn du dir das Muster korrekt gemerkt hast,
+        kommst du eine Runde weiter. Wenn nicht, musst du von vorne anfangen.<br /><br />
+        Deinen aktuellen Fortschritt kannst du unten auf dem Bildschirm verfolgen.
+    </div>
     <div id="board">
         <div class="segment top left green"></div>
         <div class="segment top right red"></div>
         <div class="segment bottom left yellow"></div>
         <div class="segment bottom right blue"></div>
+        <div class="h_line"></div>
+        <div class="v_line"></div>
         <div class="center"></div>
     </div>
 
-    <div id="message">
-        Gewonnen!
+    <div id="message"></div>
+
+    <div id="progress">
+        <div class="value"></div>
+        <div class="level">Level 1</div>
     </div>
-    
 </body>
+<script type="module" src="resources/js/index.js" defer></script>
 
-<script type="application/javascript" src="resources/js/MessageView.js" defer></script>
-<script type="application/javascript" src="resources/js/GameManager.js" defer></script>
-<script type="application/javascript" src="resources/js/BoardViewController.js" defer></script>
-<script type="application/javascript" src="resources/js/SimonSays.js" defer></script>
-
-</html> 	
+</html>
