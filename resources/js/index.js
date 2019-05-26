@@ -55,7 +55,7 @@ function onPatternPlaybackFinished() {
 }
 
 function onSegmentClicked(event) {
-  Game.enterColor(event.data.color);
+  Game.addUserSelectedColor(event.data.color);
 }
 
 init();

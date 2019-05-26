@@ -10,9 +10,18 @@ class PatternPlayer extends Observable {
     this.colors = pattern.colors;
     this.delay = pattern.delay;
     this.duration = pattern.displayTime;
+    this.isPlaying = false;
+    this.wasPlayed = false;
   }
 
   play() {
+    if (this.isPlaying === true) {
+      throw new Error("Pattern is already playing");
+    }
+    if (this.wasPlayed === true) {
+      throw new Error("Can not play pattern more than once");
+    }
+    this.isPlaying = true;
     this.onTick();
   }
 
@@ -22,21 +31,22 @@ class PatternPlayer extends Observable {
     this.notifyAll(tickEvent);
     if (this.colors.length > 1) {
       this.colors = this.colors.slice(1);
-      setTimeout(this.wait.bind(this), this.duration);
+      setTimeout(this.delayNextCall.bind(this, this.onTick.bind(this)), this.duration);
     } else {
       setTimeout(this.onFinished.bind(this), this.duration);
     }
   }
 
   onFinished() {
-    let tickEvent = new Event("patternEnd", null);
+    let tickEvent = new Event("patternComplete");
     this.notifyAll(tickEvent);
+    this.onFinished = true;
   }
 
-  wait() {
+  delayNextCall(callback) {
     let tickEvent = new Event("patternChange", { color: "none" });
     this.notifyAll(tickEvent);
-    setTimeout(this.onTick.bind(this), this.delay);
+    setTimeout(callback, this.delay);
   }
 
 }
@@ -54,24 +64,20 @@ class GameView extends View {
     this.el.addEventListener("click", this.onClick.bind(this));
   }
 
-  onClick(event) {
-    if (this.enabled === false) {
-      return;
-    }
-    let target = event.target;
-    if (target.classList.contains("segment")) {
-      let color = target.classList.item(target.classList.length - 1),
-        clickEvent = new Event("segmentClick", { color: color });
-      this.notifyAll(clickEvent);
-    }
-  }
-
   enable() {
     this.enabled = true;
   }
 
   disable() {
     this.enabled = false;
+  }
+
+  playbackPattern(pattern, callback) {
+    let player = new PatternPlayer(pattern);
+    this.currentPatternCallback = callback;
+    player.addEventListener("patternChange", this.onPatternUpdate.bind(this));
+    player.addEventListener("patternComplete", this.onPatternFinished.bind(this));
+    player.play();
   }
 
   removeHighlights() {
@@ -95,6 +101,18 @@ class GameView extends View {
     }
   }
 
+  onClick(event) {
+    if (this.enabled === false) {
+      return;
+    }
+    let target = event.target;
+    if (target.classList.contains("segment")) {
+      let color = target.getAttribute("data-color"),
+        clickEvent = new Event("segmentClick", { color: color });
+      this.notifyAll(clickEvent);
+    }
+  }
+
   onPatternUpdate(event) {
     if (event.data.color === "none") {
       this.removeHighlights();
@@ -106,14 +124,6 @@ class GameView extends View {
   onPatternFinished() {
     this.removeHighlights();
     this.currentPatternCallback();
-  }
-
-  playbackPattern(pattern, callback) {
-    let player = new PatternPlayer(pattern);
-    this.currentPatternCallback = callback;
-    player.addEventListener("patternChange", this.onPatternUpdate.bind(this));
-    player.addEventListener("patternEnd", this.onPatternFinished.bind(this));
-    player.play();
   }
 
 }
