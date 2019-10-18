@@ -1,0 +1,23 @@
+{
+  "name": "mme-simon-says",
+  "version": "1.0.0",
+  "description": "The Simon Says game",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says.git"
+  },
+  "author": "Alexander Bazo <alexander.bazo@ur.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says/issues"
+  },
+  "homepage": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says#readme"
+}
