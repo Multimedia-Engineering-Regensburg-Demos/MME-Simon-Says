@@ -1,16 +1,6 @@
-@font-face {
-    font-family: "Gloria Hallelujah";
-    src: url("fonts/Gloria_Hallelujah/GloriaHallelujah.ttf");
-}
-
-@font-face {
-    font-family: "Crimson Text";
-    src: url("fonts/Crimson_Text/CrimsonText-Regular.ttf");
-}
-
 html,
 body {
-    font-family: 'Crimson Text', serif;
+    font-family: "Crimson Text", serif;
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
@@ -25,7 +15,7 @@ header h1 {
     padding: 1%;
     text-align: center;
     font-size: 4em;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: "Gloria Hallelujah", cursive;
     color: rgb(0, 0, 0);
 }
 
@@ -84,7 +74,6 @@ header .blue {
     left: 0;
     top: 0;
 }
-
 
 #progress {
     position: absolute;
@@ -160,7 +149,6 @@ header .blue {
     width: 0.5vw;
     background-color: rgb(30, 30, 30);
 }
-
 
 .segment {
     display: block;
