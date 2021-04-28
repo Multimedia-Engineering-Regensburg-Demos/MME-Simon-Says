@@ -18,6 +18,6 @@
     },
     "homepage": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says#readme",
     "dependencies": {
-        "eslint": "^7.0.0"
+        "eslint": "^7.13.0"
     }
 }
