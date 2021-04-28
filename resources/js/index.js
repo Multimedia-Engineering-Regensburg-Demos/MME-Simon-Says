@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import Config from "./utils/config.js";
+import Config from "./utils/Config.js";
 import Game from "./game/Game.js";
 import GameView from "./ui/GameView.js";
 import MessageView from "./ui/MessageView.js";

@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "eslint": "eslint --format table resources/js",
-        "start": "http-server . -o"
+        "eslint": "eslint --format table resources/js"
     },
     "repository": {
         "type": "git",
@@ -19,7 +18,6 @@
     },
     "homepage": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says#readme",
     "dependencies": {
-        "eslint": "^7.13.0",
-        "http-server": "^0.12.3"
+        "eslint": "^7.13.0"
     }
 }

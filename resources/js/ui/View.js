@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import Config from "../utils/config.js";
+import Config from "../utils/Config.js";
 import Observable from "../utils/Observer.js";
 
 class View extends Observable {
