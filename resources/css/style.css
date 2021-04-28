@@ -1,13 +1,3 @@
-@font-face {
-    font-family: "Gloria Hallelujah";
-    src: url("fonts/Gloria_Hallelujah/GloriaHallelujah.ttf");
-}
-
-@font-face {
-    font-family: "Crimson Text";
-    src: url("fonts/Crimson_Text/CrimsonText-Regular.ttf");
-}
-
 html,
 body {
     font-family: 'Crimson Text', serif;
@@ -85,7 +75,6 @@ header .blue {
     top: 0;
 }
 
-
 #progress {
     position: absolute;
     bottom: 0vh;
@@ -160,7 +149,6 @@ header .blue {
     width: 0.5vw;
     background-color: rgb(30, 30, 30);
 }
-
 
 .segment {
     display: block;
