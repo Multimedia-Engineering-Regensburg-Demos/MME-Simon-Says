@@ -1,25 +1,23 @@
 {
-  "name": "mme-simon-says",
-  "version": "1.0.0",
-  "description": "The Simon Says game",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint --format table resources/js",
-    "start": "http-server ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says.git"
-  },
-  "author": "Alexander Bazo <alexander.bazo@ur.de>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says/issues"
-  },
-  "homepage": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says#readme",
-  "dependencies": {
-    "eslint": "^7.0.0",
-    "http-server": "^0.12.3"
-  }
+    "name": "mme-simon-says",
+    "version": "1.0.0",
+    "description": "The Simon Says game",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint": "eslint --format table resources/js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says.git"
+    },
+    "author": "Alexander Bazo <alexander.bazo@ur.de>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says/issues"
+    },
+    "homepage": "https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-Simon-Says#readme",
+    "dependencies": {
+        "eslint": "^7.0.0"
+    }
 }
