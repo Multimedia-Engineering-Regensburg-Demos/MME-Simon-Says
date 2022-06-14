@@ -11,7 +11,7 @@ function init() {
         }
     }
     console.log("Initializing application");
-    // Start here
+    // TODO: Start your implementation here
 }
 
 init();
